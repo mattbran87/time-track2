@@ -1,0 +1,12 @@
+{
+  "Schema" : [
+    {
+      "id" : "Number",
+      "taskName" : "String",
+      "timeIn" : "String",
+      "timeOut" : "String",
+      "description" : "String",
+      "tags" : "Object"
+    }
+  ]
+}

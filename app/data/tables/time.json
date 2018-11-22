@@ -1,0 +1,48 @@
+{
+  "Time": [
+    {
+      "id": 0,
+      "date" : "11/20/2018",
+      "tasks" : [
+        {
+          "id" : 0,
+          "taskName" : "python",
+          "timeIn" : " 1542831967066",
+          "timeOut" : "1542832075826",
+          "description" : "Did some python",
+          "tags" : ["python", "ArcPro"]
+        },
+        {
+          "id" : 1,
+          "taskName" : "Electron",
+          "timeIn" : " 1542831967066",
+          "timeOut" : "1542832075826",
+          "description" : "Worked on Electron app",
+          "tags" : ["JavaScript", "Electron"]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "date" : "11/21/2018",
+      "tasks" : [
+        {
+          "id" : 0,
+          "taskName" : "Django",
+          "timeIn" : " 1542831967066",
+          "timeOut" : "1542832075826",
+          "description" : "Did some Django",
+          "tags" : ["python", "Django"]
+        },
+        {
+          "id" : 1,
+          "taskName" : "Drupal",
+          "timeIn" : " 1542831967066",
+          "timeOut" : "1542832075826",
+          "description" : "Did some Drupal",
+          "tags" : ["PHP", "Drupal"]
+        }
+      ]
+    }
+  ]
+}

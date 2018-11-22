@@ -1,0 +1,60 @@
+{
+  "Tags" : [
+    {
+      "python" : [
+        {
+          "id" : 0,
+          "timeID" : 0,
+          "taskID" : 0
+        },
+        {
+          "id" : 1,
+          "timeID" : 1,
+          "taskID" : 0
+        }
+      ],
+      "ArcPro" : [
+        {
+          "id" : 0,
+          "timeID" : 0,
+          "taskID" : 0
+        }
+      ],
+      "JavaScript" : [
+        {
+          "id" : 0,
+          "timeID" : 0,
+          "taskID" : 1
+        }
+      ],
+      "Electron" : [
+        {
+          "id" : 0,
+          "timeID" : 0,
+          "taskID" : 1
+        }
+      ],
+      "Django" : [
+        {
+          "id" : 0,
+          "timeID" : 1,
+          "taskID" : 0
+        }
+      ],
+      "PHP": [
+        {
+          "id" : 0,
+          "timeID" : 1,
+          "taskID" : 1
+        }
+      ],
+      "Drupal" : [
+        {
+          "id" : 0,
+          "timeID" : 1,
+          "taskID" : 1
+        }
+      ]
+    }
+  ]
+}
