@@ -1,0 +1,143 @@
+{
+  "Time": [
+    {
+      "id": 0,
+      "date" : "11/20/2018",
+      "tasks" : [
+        {
+          "id" : 0,
+          "taskID" : 0
+        },
+        {
+          "id" : 1,
+          "taskID" : 1
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "date" : "11/21/2018",
+      "tasks" : [
+        {
+          "id" : 0,
+          "taskID" : 2
+        },
+        {
+          "id" : 1,
+          "taskID" : 3
+        }
+      ]
+    }
+  ],
+  "Tasks" : [
+    {
+      "id" : 0,
+      "timeID" : 0,
+      "taskName" : "python",
+      "timeIn" : " 1542831967066",
+      "timeOut" : "1542832075826",
+      "description" : "Did some python",
+      "tags" : ["python", "ArcPro"]
+    },
+    {
+      "id" : 1,
+      "timeID" : 0,
+      "taskName" : "Electron",
+      "timeIn" : " 1542831967066",
+      "timeOut" : "1542832075826",
+      "description" : "Worked on Electron app",
+      "tags" : ["JavaScript", "Electron"]
+    },
+    {
+      "id" : 2,
+      "timeID" : 1,
+      "taskName" : "Django",
+      "timeIn" : " 1542831967066",
+      "timeOut" : "1542832075826",
+      "description" : "Did some Django",
+      "tags" : ["python", "Django"]
+    },
+    {
+      "id" : 3,
+      "timeID" : 1,
+      "taskName" : "Drupal",
+      "timeIn" : " 1542831967066",
+      "timeOut" : "1542832075826",
+      "description" : "Did some Drupal",
+      "tags" : ["PHP", "Drupal"]
+    }
+  ],
+  "Tags" : [
+    {
+      "python" : [
+        {
+          "id" : 0,
+          "timeID" : 0,
+          "taskID" : 0
+        },
+        {
+          "id" : 1,
+          "timeID" : 1,
+          "taskID" : 2
+        }
+      ]
+    },
+    {
+      "ArcPro" : [
+        {
+          "id" : 0,
+          "timeID" : 0,
+          "taskID" : 0
+        }
+      ]
+    },
+    {
+      "JavaScript" : [
+        {
+          "id" : 0,
+          "timeID" : 1,
+          "taskID" : 1
+        }
+      ]
+    },
+    {
+      "Electron" : [
+        {
+          "id" : 0,
+          "timeID" : 1,
+          "taskID" : 1
+        }
+      ]
+    },
+    {
+      "Django" : [
+        {
+          "id" : 0,
+          "timeID" : 1,
+          "taskID" : 2
+        }
+      ]
+    },
+    {
+      "PHP": [
+        {
+          "id" : 0,
+          "timeID" : 1,
+          "taskID" : 3
+        }
+      ]
+    },
+    {
+      "Drupal" : [
+        {
+          "id" : 0,
+          "timeID" : 1,
+          "taskID" : 3
+        }
+      ]
+    }
+  ],
+  "UserSettings" : [
+
+  ]
+}

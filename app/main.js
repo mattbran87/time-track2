@@ -16,7 +16,7 @@ app.on('ready', function(){
   });
   // Load html into window
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, '/pages/mainWindow/mainWindow.html'),
+    pathname: path.join(__dirname, '/windows/mainWindow/mainWindow.html'),
     protocol: 'file:',
     slashes: true
   }));
