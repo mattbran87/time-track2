@@ -8,12 +8,41 @@
     <script src="..\..\..\..\..\node_modules\loaders.css\loaders.css.js"></script>
     <script type="text/javascript" src="..\..\..\..\global\scripts.js"></script>
     <script type="text/javascript" src="taskTracker.js"></script>
-    <title>Time Tracker</title>
+    <script type="text/javascript" src="controller.js"></script>
+    <title>Task Tracker</title>
   </head>
   <body>
     <div class="">
       <a href="../../mainWindow.html"><button type="button" class="btn btn-primary">page</button></a>
-      <h1>Hello</h1>
+      <div class="main container-fluid">
+        <div class="row">
+          <form class="" id="" action="index.html" method="post">
+            <div class="form-group">
+              <label for="taskName">Task Name</label>
+              <input class="form-control" type="text" name="" value="">
+            </div>
+            <div class="form-group">
+              <label for="description">Task Description</label>
+              <input class="form-control" type="textarea" name="" value="">
+            </div>
+            <div class="form-group">
+              <label for="timeIn">Start Time</label>
+              <input class="form-control" type="time" name="" value="">
+              <button type="button" class="btn btn-primary">Add Time</button>
+            </div>
+            <div class="form-group">
+              <label for="timeOut">End Time</label>
+              <input class="form-control" type="time" name="" value="">
+              <button type="button" class="btn btn-primary">Add Time</button>
+            </div>
+            <div class="form-group">
+              <label for="tags">Tags</label>
+              <input class="form-control" type="text" name="" value="">
+            </div>
+            <button type="submit" id="submitTasks" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>

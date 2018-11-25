@@ -14,6 +14,7 @@ app.on('ready', function(){
     height: 728,
     icon:'app/files/images/clock-icon.png'
   });
+
   // Load html into window
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, '/windows/mainWindow/mainWindow.html'),
