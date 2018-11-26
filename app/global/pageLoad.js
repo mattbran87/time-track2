@@ -7,7 +7,7 @@ class PageLoad {
     var currentDate = helper.getCurrentDate();
     var workingDate = database.dateGetByDate(currentDate);
     if (workingDate == undefined) {
-      return createDate();
+      return database.createDate();
     } else {
       return workingDate;
     }

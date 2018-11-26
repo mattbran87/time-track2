@@ -14,10 +14,10 @@ const moment = require('moment');
 const database = require("crud");
 // helper functions
 const helper = require("helpers");
-// load page data
+// load page data functions
 const pageload = require("pageLoad");
 
-// load any modules that need to be on page ready 
+// load any modules that need to be on page ready
 $(document).ready(function() {
-
+  // sessionStorage.setItem('swamp', 'boy');
 });

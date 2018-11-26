@@ -46,9 +46,7 @@ class DatabaseFunctions {
 
   createDateTaskRecord(date) {
     var currentDate = this.dateGetByDate(date);
-    console.log(currentDate);
     var tasksLength = currentDate.tasks.length;
-    console.log(tasksLength);
     var logu = db.get('Date')
     .find({date : date})
     .get('tasks')
@@ -57,14 +55,6 @@ class DatabaseFunctions {
       "taskID": currentDate.id // TODO: fix this value. Not correct value.
     })
     .write();
-    // .find({date : date})
-    // .push({
-    //   "id": tasksLength,
-    //   "taskID": currentDate.id
-    // })
-    // .write();
-    console.log(logu);
-    return logu;
   }
 
   createTasks() {

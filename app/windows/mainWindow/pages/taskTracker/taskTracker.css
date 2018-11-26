@@ -1,0 +1,15 @@
+#formWrapper {
+  width: 100%;
+}
+
+form#addTaskForm {
+    width: 100%;
+}
+
+button.startTimeButton {
+    margin-top: 10px;
+}
+
+button.endTimeButton {
+    margin-top: 10px;
+}
