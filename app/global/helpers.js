@@ -7,6 +7,12 @@ class Helpers {
     var date = moment();
     return date.format('MM/DD/YYYY');
   }
+
+  getLastTask() {
+    return db.get('Tasks')
+             .last()
+             .value()
+  }
 }
 
 module.exports = new Helpers()

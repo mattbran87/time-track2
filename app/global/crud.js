@@ -44,7 +44,7 @@ class DatabaseFunctions {
     .write()
   }
 
-  createDateTaskRecord(date) {
+  createDateTaskRecord(date, taskData) {
     var currentDate = this.dateGetByDate(date);
     var tasksLength = currentDate.tasks.length;
     var logu = db.get('Date')
@@ -52,17 +52,26 @@ class DatabaseFunctions {
     .get('tasks')
     .push({
       "id": tasksLength,
-      "taskID": currentDate.id // TODO: fix this value. Not correct value.
+      "taskID": taskData.id // TODO: fix this value. Not correct value.
     })
     .write();
   }
 
-  createTasks() {
-
+  createTask(submissionObject) {
+    db.get('Tasks')
+      .push(submissionObject)
+      .write()
   }
 
   getTasks() {
 
+  }
+
+  getTaskByID(id) {
+    var task = db.get('Tasks')
+    .find({id : id})
+    .value();
+    return task;
   }
 
   updateDate() {
