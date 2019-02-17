@@ -13,7 +13,7 @@
     The Electron framework uses web technologies to build desktop applications. My experience so far in desktop application development has been in Python using the Tkinter library. The Tkinter library is useful but does not provide a framework to make applications look like they were made in the 21st century.
 * JS OOP
 
-    I am learning more about OOP in JavaScript. With my PHP background, I am learning more about JavaScript classes and prototypical inheritance.
+    With my PHP background, I am learning more about JavaScript classes and prototypical inheritance using a syntax that is more familiar to me.
 
 ## Technologies Used
 * Electron.js
