@@ -1,7 +1,7 @@
 # Time Tracker App
 
-## Ideas being explored in this project
-******
+## Ideas Being Explored In This Project
+
 * HTML5 Session Storage and Local Storage
 
     Session Storage and Local Storage are browser based data storage utilities. Local Storage and Session Storage differ in the time that data is stored. Local Storage has no expiration time, Session Storage only stores data for as long as the page session.
