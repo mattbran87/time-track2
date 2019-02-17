@@ -10,12 +10,18 @@ const db = low(adapter)
 
 // load moment js
 const moment = require('moment');
+// load jquery ui
+const jqui = require('jquery_ui/jquery-ui');
 // CRUD functions
 const database = require("crud");
 // helper functions
 const helper = require("helpers");
 // load page data functions
 const pageload = require("pageLoad");
+// load dragula
+const dragula = require("dragula/dragula");
+// load fontawesome
+const fontawesome = require("font-awesome/js/all");
 
 // load any modules that need to be on page ready
 $(document).ready(function() {

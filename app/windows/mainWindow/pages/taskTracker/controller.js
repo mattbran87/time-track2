@@ -58,13 +58,13 @@ function formSubmit() {
 
 function buildEntity() {
   // get current date record from sessionStorage
-  var sessionWorkingDate = JSON.parse(sessionStorage.getItem('workingDate'));
+  var sessionWorkingDate = JSON.parse(sessionStorage.getItem('workingDate')); // NOTE: Since item is loaded into sessionStorage, when deltes are made, this will need to be updated as well
 
   // iterate over record and build task records to construct dateTask Entity
   sessionWorkingDate.tasks.forEach(function(elem, i){
     var retrievedTask = database.getTaskByID(elem.taskID)
     sessionWorkingDate.tasks[i] = retrievedTask;
   });
-  
+
   return sessionWorkingDate;
 }

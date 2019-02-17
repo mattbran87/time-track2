@@ -1,8 +1,11 @@
 @import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 @import '../../node_modules/animate.css/animate.css';
 @import '../../node_modules/hover.css/css/hover.css';
-@import '../../node_modules/font-awesome/css/font-awesome.css';
 @import '../../node_modules/loaders.css/loaders.min.css';
+@import 'dragula/dragula.css';
+@import 'jquery_ui/jquery-ui.css';
+@import 'font-awesome/css/all.css';
+
 
 @font-face {
    font-family: Raleway;
@@ -26,6 +29,43 @@ html, body {
   */
 }
 
-.box-link {
+/* .box-link {
   border: 1px solid black;
+} */
+
+/* td:hover{
+	cursor:move;
+} */
+
+.side-link {
+  font-size: 50px;
+  color: rgba(0,0,0,0.5);
+}
+
+span.side-link {
+  cursor: pointer;
+}
+
+.side-link:hover {
+  color: rgba(0,0,0,1);
+  text-decoration: none;
+}
+
+.side-link span {
+    font-size: 16px;
+    display: block;
+    margin-top: -20px;
+    position: relative;
+}
+
+hr.line-breaker {
+    border-top: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.main.container {
+    margin-top: 20px;
+}
+
+.hidden {
+  display: none;
 }

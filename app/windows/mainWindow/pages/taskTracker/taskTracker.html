@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="..\..\..\..\global\styles.css">
+    <link rel="stylesheet" href="..\..\..\..\global\jquery_ui\jquery-ui.css">
     <link rel="stylesheet" href="taskTracker.css">
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script src="..\..\..\..\..\node_modules\bootstrap\dist\js\bootstrap.js"></script>
@@ -12,47 +13,82 @@
     <title>Task Tracker</title>
   </head>
   <body>
-    <div class="">
-      <a href="../../mainWindow.html"><button type="button" class="btn btn-primary">page</button></a>
-      <div class="main container">
-        <div class="row">
-          <div class="tasks" id="tasks">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-1 buttonsSidebar">
+          <a href="../../mainWindow.html" class="side-link home"><i class="fa fa-home"></i></a>
+          <a href="../../taskTracker.html" class="side-link history"><i class="fa fa-history"></i></a>
+          <a href="../../userSettings.html" class="side-link history"><i class="fas fa-user"></i></a>
+          <hr class="line-breaker">
+          <span class="side-link add-task-button"><i class="far fa-plus-square"></i></span>
+          <span class="side-link print-csv"><i class="fas fa-file-csv"></i></span>
+          <span class="side-link new-day"><i class="far fa-calendar-alt"></i></span>
+        </div>
+        <div class="col-sm-11">
+          <div class="main container">
+            <div class="row">
+              <div class="tasks" id="tasks">
 
-          </div>
-          <div class="formWrapper" id="formWrapper">
-            <form class="addTaskForm" id="addTaskForm" action="index.html" method="post">
-              <div class="formContentWrapper" id="formContentWrapper">
-                <div class="form-row">
-                  <div class="form-group col-md-2">
-                    <label for="tags">Tags</label>
-                    <input class="form-control" id="tags" type="text" name="tags" value="">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <label for="taskName">Task Name</label>
-                    <input class="form-control" id="taskName" type="text" name="taskName" value="">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="description">Task Description</label>
-                    <textarea class="form-control" id="description" type="text" name="description" value=""></textarea>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-3">
-                    <label for="timeIn">Start Time</label>
-                    <input class="form-control startTimeInput" id="timeIn" type="text" name="timeIn" value="">
-                    <button type="button" id="startTimeButton" class="btn btn-primary startTimeButton">Add Time</button>
-                  </div>
-                  <div class="form-group col-md-3">
-                    <label for="timeOut">End Time</label>
-                    <input class="form-control endTimeInput" id="timeOut" type="text" name="timeOut" value="">
-                    <button type="button" id="endTimeButton" class="btn btn-primary endTimeButton">Add Time</button>
-                  </div>
-                </div>
-                <div class="submitWrapper" id="submitWrapper">
-                  <button type="submit" id="submitTasks" class="btn btn-primary">Submit</button>
-                </div>
               </div>
-            </form>
+              <div class="formWrapper" id="formWrapper">
+                <form class="addTaskForm" id="addTaskForm" action="index.html" method="post">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-12 table-responsive">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th scope="col"></th>
+                              <th scope="col">Task Name</th>
+                              <th scope="col">Tags</th>
+                              <th scope="col">Task Description</th>
+                              <th scope="col">Start Time</th>
+                              <th scope="col">End Time</th>
+                              <th scope="col" class="hidden">Current Position</th>
+                            </tr>
+                          </thead>
+                          <tbody id="container">
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="formContentWrapper" id="formContentWrapper">
+                    <div class="form-row">
+                      <div class="form-group col-md-2">
+                        <label for="tags">Tags</label>
+                        <input class="form-control" id="tags" type="text" name="tags" value="">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="taskName">Task Name</label>
+                        <input class="form-control" id="taskName" type="text" name="taskName" value="">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="description">Task Description</label>
+                        <textarea class="form-control" id="description" type="text" name="description" value=""></textarea>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-3">
+                        <label for="timeIn">Start Time</label>
+                        <input class="form-control startTimeInput" id="timeIn" type="text" name="timeIn" value="">
+                        <button type="button" id="startTimeButton" class="btn btn-primary startTimeButton">Add Time</button>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label for="timeOut">End Time</label>
+                        <input class="form-control endTimeInput" id="timeOut" type="text" name="timeOut" value="">
+                        <button type="button" id="endTimeButton" class="btn btn-primary endTimeButton">Add Time</button>
+                      </div>
+                    </div>
+                    <div class="submitWrapper" id="submitWrapper">
+                      <button type="submit" id="submitTasks" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>

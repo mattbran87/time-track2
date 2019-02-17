@@ -2,18 +2,34 @@
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="..\..\..\..\global\styles.css">
+    <link rel="stylesheet" href="..\..\..\..\global\jquery_ui\jquery-ui.css">
     <link rel="stylesheet" href="userSettings.css">
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script src="..\..\..\..\..\node_modules\bootstrap\dist\js\bootstrap.js"></script>
     <script src="..\..\..\..\..\node_modules\loaders.css\loaders.css.js"></script>
     <script type="text/javascript" src="..\..\..\..\global\scripts.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
     <script type="text/javascript" src="userSettings.js"></script>
     <title>Time Tracker</title>
   </head>
   <body>
-    <div class="">
-      <a href="../../mainWindow.html"><button type="button" class="btn btn-primary">page</button></a>
-      <h1>Hello</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-1 buttonsSidebar">
+          <a href="../../mainWindow.html" class="side-link home"><i class="fa fa-home"></i></a>
+          <a href="../../taskTracker.html" class="side-link history"><i class="fa fa-history"></i></a>
+          <a href="../../userSettings.html" class="side-link history"><i class="fas fa-user"></i></a>
+          <hr class="line-breaker">
+          <span class="side-link add"><i class="far fa-plus-square"></i></span>
+        </div>
+        <div class="col-sm-11">
+          <div class="main container">
+            <div class="row">
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
