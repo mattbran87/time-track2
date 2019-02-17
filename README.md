@@ -1,6 +1,6 @@
 # Time Tracker App
 
-### Ideas being explored in this project
+## Ideas being explored in this project
 ******
 * HTML5 Session Storage and Local Storage
 
@@ -15,7 +15,7 @@
 
     I am learning more about OOP in JavaScript. With my PHP background, I am learning more about JavaScript classes and prototypical inheritance.
 
-### Technologies Used
+## Technologies Used
 * Electron.js
 * Node.js
 * Bootstrap 4
@@ -23,3 +23,15 @@
 * Lodash with LowDB
 * Moment.js
 * Animate.css
+
+## Known Bugs
+
+There are no known bugs in this application.
+
+## Support and contact details
+
+Contact Matthew Brandenburg at matt.bran87@gmail.com
+
+### License
+
+Published under the MIT License.
