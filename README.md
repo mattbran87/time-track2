@@ -26,7 +26,7 @@
 
 ## Known Bugs
 
-There are no known bugs in this application.
+There are no known bugs but application is still under development. 
 
 ## Support and contact details
 

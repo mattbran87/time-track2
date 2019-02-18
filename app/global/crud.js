@@ -27,6 +27,13 @@ class DatabaseFunctions {
     return date;
   }
 
+  dateGetByID(id) {
+    var date = db.get('Date')
+    .find({id : id})
+    .value();
+    return date;
+  }
+
   createDate() {
     // get last entry to write to next position
     var lastEntry = db.get('Date')

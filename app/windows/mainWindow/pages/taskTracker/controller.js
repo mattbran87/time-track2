@@ -1,7 +1,13 @@
 $(document).ready(function() {
   pageLoadData();
-  formSubmit();
+  // formSubmit();
+
 });
+
+// TODO: Use this to save the session storage when user leaves page
+// window.onbeforeunload = function(){
+//   alert("Leaving?");
+// };
 
 if (typeof pageSession == 'undefined') {
   var pageSession = {}
@@ -54,6 +60,8 @@ function formSubmit() {
     timeOut.value = "";
     tags.value = "";
   });
+
+
 }
 
 function buildEntity() {

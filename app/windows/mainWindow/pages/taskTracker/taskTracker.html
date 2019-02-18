@@ -20,7 +20,8 @@
           <a href="../taskHistory/taskHistory.html" class="side-link history"><i class="fa fa-history"></i></a>
           <a href="../userSettings/userSettings.html" class="side-link history"><i class="fas fa-user"></i></a>
           <hr class="line-breaker">
-          <span class="side-link add-task-button"><i class="far fa-plus-square"></i></span>
+          <span data-toggle="modal" data-target="#genericModal" class="side-link add-task-button" id="addTaskItem"><i class="far fa-plus-square"></i></span>
+          <span class="side-link save-all"><i class="far fa-save"></i></span>
           <span class="side-link print-csv"><i class="fas fa-file-csv"></i></span>
           <span class="side-link new-day"><i class="far fa-calendar-alt"></i></span>
         </div>
@@ -35,6 +36,9 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-12 table-responsive">
+                        <!-- <div class="submitWrapper" id="submitWrapper">
+                          <button type="submit" id="submitTasks" class="btn btn-success">Save All</button>
+                        </div> -->
                         <table class="table table-hover">
                           <thead>
                             <tr>
@@ -54,41 +58,29 @@
                       </div>
                     </div>
                   </div>
-
-                  <div class="formContentWrapper" id="formContentWrapper">
-                    <div class="form-row">
-                      <div class="form-group col-md-2">
-                        <label for="tags">Tags</label>
-                        <input class="form-control" id="tags" type="text" name="tags" value="">
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="taskName">Task Name</label>
-                        <input class="form-control" id="taskName" type="text" name="taskName" value="">
-                      </div>
-                      <div class="form-group col-md-6">
-                        <label for="description">Task Description</label>
-                        <textarea class="form-control" id="description" type="text" name="description" value=""></textarea>
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group col-md-3">
-                        <label for="timeIn">Start Time</label>
-                        <input class="form-control startTimeInput" id="timeIn" type="text" name="timeIn" value="">
-                        <button type="button" id="startTimeButton" class="btn btn-primary startTimeButton">Add Time</button>
-                      </div>
-                      <div class="form-group col-md-3">
-                        <label for="timeOut">End Time</label>
-                        <input class="form-control endTimeInput" id="timeOut" type="text" name="timeOut" value="">
-                        <button type="button" id="endTimeButton" class="btn btn-primary endTimeButton">Add Time</button>
-                      </div>
-                    </div>
-                    <div class="submitWrapper" id="submitWrapper">
-                      <button type="submit" id="submitTasks" class="btn btn-primary">Submit</button>
-                    </div>
-                  </div>
                 </form>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="genericModal" tabindex="-1" role="dialog" aria-labelledby="genericModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="genericModalTitle"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-danger">Delete</button>
+            <button type="button" class="btn btn-success">Save</button> -->
           </div>
         </div>
       </div>
