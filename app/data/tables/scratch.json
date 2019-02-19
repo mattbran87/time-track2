@@ -3,7 +3,7 @@
     {
       "id": 0,
       "date": "11/20/2018",
-      "tasks": [
+      "dateJobs": [
         {
           "id": 0,
           "taskID": 0
@@ -17,7 +17,7 @@
     {
       "id": 1,
       "date": "11/21/2018",
-      "tasks": [
+      "dateJobs": [
         {
           "id": 0,
           "taskID": 2
@@ -31,7 +31,7 @@
     {
       "id": 2,
       "date": "11/24/2018",
-      "tasks": [
+      "dateJobs": [
         {
           "id": 0,
           "taskID": 2
@@ -41,12 +41,12 @@
     {
       "id": 3,
       "date": "11/25/2018",
-      "tasks": []
+      "dateJobs": []
     },
     {
       "id": 4,
       "date": "11/26/2018",
-      "tasks": [
+      "dateJobs": [
         {
           "id": 0,
           "taskID": 4
@@ -56,12 +56,12 @@
     {
       "id": 5,
       "date": "02/14/2019",
-      "tasks": []
+      "dateJobs": []
     },
     {
       "id": 6,
       "date": "02/16/2019",
-      "tasks": [
+      "dateJobs": [
         {
           "id": 0,
           "taskID": 2
@@ -79,7 +79,7 @@
     {
       "id": 7,
       "date": "02/17/2019",
-      "tasks": [
+      "dateJobs": [
         {
           "id": 0,
           "taskID": 2
@@ -99,28 +99,28 @@
       ]
     },
     {
-      "id": 6,
+      "id": 8,
       "date": "02/18/2019",
-      "tasks": [
+      "dateJobs": [
         {
           "id": 0,
-          "taskID": 5
+          "taskID": 2
         },
         {
           "id": 1,
-          "taskID": 6
+          "taskID": 3
         },
         {
           "id": 2,
-          "taskID": 7
+          "taskID": 0
         },
         {
           "id": 3,
-          "taskID": 8
+          "taskID": 1
         },
         {
           "id": 4,
-          "taskID": 9
+          "taskID": 5
         }
       ]
     }
@@ -195,50 +195,6 @@
       "description": "asdfasdfadsf asdf adsfadfasdfadsf",
       "tags": [
         "asdfadsf"
-      ]
-    },
-    {
-      "id": 6,
-      "timeID": 8,
-      "taskName": "asdfasdf",
-      "timeIn": "1550526204163",
-      "timeOut": "1550526204600",
-      "description": "asdfasdfadsf asdf adsfadfasdfadsf",
-      "tags": [
-        "asdfadsf"
-      ]
-    },
-    {
-      "id": 7,
-      "timeID": 8,
-      "taskName": "asdfasdf",
-      "timeIn": "1550526204163",
-      "timeOut": "1550526204600",
-      "description": "asdfasdfadsf asdf adsfadfasdfadsf",
-      "tags": [
-        "asdfadsf"
-      ]
-    },
-    {
-      "id": 8,
-      "timeID": 8,
-      "taskName": "asdfasdf",
-      "timeIn": "1550526204163",
-      "timeOut": "1550526204600",
-      "description": "asdfasdfadsf asdf adsfadfasdfadsf",
-      "tags": [
-        "asdfadsf"
-      ]
-    },
-    {
-      "id": 9,
-      "timeID": 6,
-      "taskName": "dfsdfasdf",
-      "timeIn": "1550539443825",
-      "timeOut": "1550539444431",
-      "description": "asdf asdf adsf ds",
-      "tags": [
-        "sdfdsfa"
       ]
     }
   ],

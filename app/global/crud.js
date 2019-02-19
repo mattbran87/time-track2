@@ -5,17 +5,17 @@ class DatabaseFunctions {
 
   // get all
   dateGetAll() {
-    var date = db.get('Date').value();
+    var date = db.get('Date').cloneDeep().value();
     return date;
   }
 
   tagsGetAll() {
-    var tags = db.get('Tags').value();
+    var tags = db.get('Tags').cloneDeep().value();
     return tags;
   }
 
   userSettingsGetAll() {
-    var userSettings = db.get('UserSettings').value();
+    var userSettings = db.get('UserSettings').cloneDeep().value();
     return userSettings;
   }
 
@@ -23,6 +23,7 @@ class DatabaseFunctions {
   dateGetByDate(date) {
     var date = db.get('Date')
     .find({date : date})
+    .cloneDeep()
     .value();
     return date;
   }
@@ -30,6 +31,7 @@ class DatabaseFunctions {
   dateGetByID(id) {
     var date = db.get('Date')
     .find({id : id})
+    .cloneDeep()
     .value();
     return date;
   }
@@ -38,6 +40,7 @@ class DatabaseFunctions {
     // get last entry to write to next position
     var lastEntry = db.get('Date')
     .last()
+    .cloneDeep()
     .value()
 
     // construct new entry
@@ -54,14 +57,25 @@ class DatabaseFunctions {
   createDateTaskRecord(date, taskData) {
     var currentDate = this.dateGetByDate(date);
     var tasksLength = currentDate.tasks.length;
-    var logu = db.get('Date')
-    .find({date : date})
-    .get('tasks')
-    .push({
-      "id": tasksLength,
-      "taskID": taskData.id // TODO: fix this value. Not correct value.
-    })
-    .write();
+
+    console.log(currentDate);
+    console.log(tasksLength);
+    console.log(taskData);
+
+    var datu = db.get('Date')
+              .find({date : date})
+              .value();
+
+    datu.tasks[datu.tasks["length"]] = {"id": tasksLength, "taskID": taskData.id};
+
+    datu = db.get('Date').find({date : date}).write();
+
+    // db.get('Date')
+    // .find({date : date})
+    // .push({tasks: {"id": tasksLength, "taskID": taskData.id}})
+    // .write();
+    //
+    // db.get('Date[8].tasks').push({"id": 5,"taskID": 10}).write()
   }
 
   createTask(submissionObject) {
@@ -70,13 +84,18 @@ class DatabaseFunctions {
       .write()
   }
 
-  getTasks() {
-
+  getTasksOnDate(date) {
+    var task = db.get('Date')
+    .find({date : date})
+    .cloneDeep()
+    .value();
+    return task.tasks;
   }
 
   getTaskByID(id) {
     var task = db.get('Tasks')
     .find({id : id})
+    .cloneDeep()
     .value();
     return task;
   }

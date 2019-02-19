@@ -9,13 +9,11 @@ if (typeof pageSession == 'undefined') {
 // page load into session on start
 function pageLoadData() {
   // create session data
-  var workingDate = pageload.getDate();
+  // var workingDate = pageload.getDate();
+  //
+  // sessionStorage.setItem('workingDate', JSON.stringify(workingDate));
+  // sessionStorage.setItem('userSettings', JSON.stringify({}));
+  // sessionStorage.setItem();
+  // use const data = JSON.parse(sessionStorage.getItem('items')); to use the stored object
 
-  // if session data is empty, hydrate it
-  if (!sessionStorage.length) {
-    sessionStorage.setItem('workingDate', JSON.stringify(workingDate));
-    sessionStorage.setItem('userSettings', JSON.stringify({}));
-    // sessionStorage.setItem();
-    // use const data = JSON.parse(sessionStorage.getItem('items')); to use the stored object
-  }
 }

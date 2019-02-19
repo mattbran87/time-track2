@@ -20,7 +20,6 @@ table {
 }
 
 td, th {
-  /* background: #e2e2e2; */
   border-width: 0;
   border-bottom: 1px solid #B8B8B8;
   font-weight: normal !important;
@@ -32,18 +31,6 @@ td, th {
 tr.bg-shade-1 td, tr.bg-shade-1 th {
   background: rgba(250,250,250,0.8);
 }
-/* tr.bg-shade-2 td, tr.bg-shade-2 th {
-  background: #c21749;
-}
-tr.bg-shade-3 td, tr.bg-shade-3 th {
-  background: #911546;
-}
-tr.bg-shade-4 td, tr.bg-shade-4 th {
-  background: #66203C;
-}
-tr.bg-shade-5 td, tr.bg-shade-5 th {
-  background: #4C1A2E;
-} */
 
 thead, tfoot {
   text-transform: uppercase;
@@ -55,11 +42,11 @@ thead th, tfoot th {
   border-top: unset !important;
 }
 
-/* body {
-  color: #111;
-  font-size: 16px;
-  font-family: sans-serif;
-} */
+th.mover {
+    padding: 10px;
+    height: 100%;
+    vertical-align: middle;
+}
 
 .icon_menu {
   display: block;

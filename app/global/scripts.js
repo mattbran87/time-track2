@@ -27,3 +27,35 @@ const fontawesome = require("font-awesome/js/all");
 $(document).ready(function() {
   // sessionStorage.setItem('swamp', 'boy');
 });
+
+// setup db if not set
+db.defaults({ Date: {}, Tasks: {}, Tags: {}, UserSettings: [] })
+  .write()
+
+if (!db.has('Date').value()) {
+  db.set('Date', [])
+  .write()
+} else {
+  console.log("Table Date is already set.");
+}
+
+if (!db.has('Tasks').value()) {
+  db.set('Tasks', [])
+  .write()
+} else {
+  console.log("Table Tasks is already set.");
+}
+
+if (!db.has('Tags').value()) {
+  db.set('Tags', [])
+  .write()
+} else {
+  console.log("Table Tags is already set.");
+}
+
+if (!db.has('UserSettings').value()) {
+  db.set('UserSettings', [])
+  .write()
+} else {
+  console.log("Table UserSettings is already set.");
+}
