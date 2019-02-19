@@ -1,6 +1,6 @@
 $(document).ready(function() {
   pageLoadData();
-  // formSubmit();
+  // formSubmitAddTask();
 
 });
 
@@ -59,7 +59,7 @@ function formvalidate() {
   return formValid;
 }
 
-function formSubmit() {
+function formSubmitAddTask(callback) {
   // on click of form submit button
   var submitTaskItem = document.getElementById('submitTaskItem');
 
@@ -95,24 +95,72 @@ function formSubmit() {
     // add task to the time record
     database.createDateTaskRecord(pageSession.pageEntity.date, submissionObject);
 
-    // // clear inputs
-    // taskName.value = "";
-    // description.value = "";
-    // timeIn.value = "";
-    // timeOut.value = "";
-    // tags.value = "";
+    pageSession.timeIn = "";
+    pageSession.timeOut = "";
+
+    callback();
+
+  });
+
+}
+
+function formSubmitUpdateTask(clickedItem, callback) {
+  // on click of form submit button
+  var updateTask = document.getElementById('updateTask');
+
+  updateTask.addEventListener('click', function(event) {
+    // event.preventDefault();
+
+    // get all inputs data
+    var taskName = document.getElementById('taskName');
+    var description = document.getElementById('description');
+    var timeIn = document.getElementById('timeIn');
+    var timeOut = document.getElementById('timeOut');
+    var tags = document.getElementById('tags');
+
+
+    console.log(clickedItem);
+    console.log(clickedItem.taskId);
+
+    // convert time to unix
+    var timeInUnix = moment(pageSession.pageEntity.date + " " + timeIn.value, "M/D/YYYY HH:mm:ss").unix()
+    var timeOutUnix = moment(pageSession.pageEntity.date + " " + timeOut.value, "M/D/YYYY HH:mm:ss").unix()
+
+    // get data in form and package it to write to db
+    // var sessionWorkingDate = JSON.parse(sessionStorage.getItem('workingDate'));
+    var submissionObject = {
+      "id" : clickedItem.taskId,
+      "timeID": clickedItem.task,
+      "taskName": taskName.value,
+      "timeIn": timeInUnix,
+      "timeOut": timeOutUnix,
+      "description": description.value,
+      "tags": tags.value.split(',')
+    }
+    console.log(submissionObject);
+
+    pageSession.subobj = {};
+    pageSession.subobj = submissionObject
+
+    database.updateDate(submissionObject);
+
+    // update pageSession data
+    pageSession.lastTask = helper.getLastTask();
+
+    // add task to the time record
+    database.createDateTaskRecord(pageSession.pageEntity.date, submissionObject);
 
     pageSession.timeIn = "";
     pageSession.timeOut = "";
 
-    // buildEntity();
+    if (callback) {
+      console.log(callback);
+      callback();
+    }
 
-    pageLoadData()
-
-    rebuildView();
-
-    $('#genericModal').modal('hide');
   });
+
+  console.log(clickedItem);
 }
 
 function buildEntity() {
@@ -120,10 +168,14 @@ function buildEntity() {
   var sessionWorkingDate = pageload.getDate(); // NOTE: Since item is loaded into sessionStorage, when deltes are made, this will need to be updated as well
 
   // iterate over record and build task records to construct dateTask Entity
-  sessionWorkingDate.tasks.forEach(function(elem, i){
-    var retrievedTask = database.getTaskByID(elem.taskID)
-    sessionWorkingDate.tasks[i] = retrievedTask;
-  });
+  if (typeof sessionWorkingDate != 'undefined') {
+    if (sessionWorkingDate.tasks.length) {
+      sessionWorkingDate.tasks.forEach(function(elem, i){
+        var retrievedTask = database.getTaskByID(elem.taskID)
+        sessionWorkingDate.tasks[i] = retrievedTask;
+      });
+    }
+  }
 
   return sessionWorkingDate;
 }

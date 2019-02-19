@@ -58,24 +58,13 @@ class DatabaseFunctions {
     var currentDate = this.dateGetByDate(date);
     var tasksLength = currentDate.tasks.length;
 
-    console.log(currentDate);
-    console.log(tasksLength);
-    console.log(taskData);
-
     var datu = db.get('Date')
               .find({date : date})
               .value();
+    var lastEntryID = datu.tasks[datu.tasks["length"]-1].id
+    datu.tasks[datu.tasks["length"]] = {"id": lastEntryID+1, "taskID": taskData.id};
 
-    datu.tasks[datu.tasks["length"]] = {"id": tasksLength, "taskID": taskData.id};
-
-    datu = db.get('Date').find({date : date}).write();
-
-    // db.get('Date')
-    // .find({date : date})
-    // .push({tasks: {"id": tasksLength, "taskID": taskData.id}})
-    // .write();
-    //
-    // db.get('Date[8].tasks').push({"id": 5,"taskID": 10}).write()
+    return datu = db.get('Date').find({date : date}).write();
   }
 
   createTask(submissionObject) {
@@ -100,8 +89,34 @@ class DatabaseFunctions {
     return task;
   }
 
-  updateDate() {
+  updateDate(submissionObject) {
+    console.log(submissionObject);
+    console.log(submissionObject.id);
+    var task = db.get('Tasks')
+        .find({id : parseInt(submissionObject.id)})
+        .value();
 
+    console.log(task);
+
+    task.description = submissionObject.description
+    task.tags = submissionObject.tags
+    task.taskName = submissionObject.taskName
+    task.timeIn = submissionObject.timeIn
+    task.timeOut = submissionObject.timeOut
+
+    var task = db.get('Tasks')
+          .find({id : parseInt(submissionObject.id)})
+          .assign({
+            description: submissionObject.description,
+            tags: submissionObject.tags,
+            taskName: submissionObject.taskName,
+            timeIn: submissionObject.timeIn,
+            timeOut: submissionObject.timeOut
+          })
+          .write();
+
+    // task = db.get('Tasks').find({id : parseInt(submissionObject.id)}).write();
+    console.log(task);
   }
 
   updateTask() {
