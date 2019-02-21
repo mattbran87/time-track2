@@ -2,11 +2,16 @@ const path = require('path');
 // add global to module load path
 require('app-module-path').addPath(path.join(process.cwd(), '/app/global'));
 
-// load db connection modules
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
-const adapter = new FileSync('app/data/tables/db.json')
-const db = low(adapter)
+var sqlite3 = require('sqlite3').verbose();
+// var db = new sqlite3.Database(':memory:');
+let db = new sqlite3.Database('time_tracker.db', sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, (err) => {
+  if (err) {
+    console.error(err.message);
+  } else {
+    console.log('Connected to the time_tracker database.');
+
+  }
+});
 
 // load moment js
 const moment = require('moment');
@@ -28,34 +33,22 @@ $(document).ready(function() {
   // sessionStorage.setItem('swamp', 'boy');
 });
 
-// setup db if not set
-db.defaults({ Date: {}, Tasks: {}, Tags: {}, UserSettings: [] })
-  .write()
+db.serialize(function() {
+  db.run("CREATE TABLE if not exists Date (date TEXT)");
+  db.run("CREATE TABLE if not exists Task (dateID INTEGER, taskName TEXT, timeIn INTEGER, timeOut INTEGER, description TEXT)");
+  db.run("CREATE TABLE if not exists Tags (tagName TEXT)");
+  db.run("CREATE TABLE if not exists Tag_On_Task (tagID INTEGER, taskID INTEGER)");
+  // db.run("CREATE TABLE if not exists User_Settings (info TEXT)");
 
-if (!db.has('Date').value()) {
-  db.set('Date', [])
-  .write()
-} else {
-  console.log("Table Date is already set.");
-}
+  // var stmt = db.prepare("INSERT INTO lorem VALUES (?)");
+  // for (var i = 0; i < 10; i++) {
+  //     stmt.run("Ipsum " + i);
+  // }
+  // stmt.finalize();
+  //
+  // db.each("SELECT rowid AS id, info FROM lorem", function(err, row) {
+  //     console.log(row.id + ": " + row.info);
+  // });
+});
 
-if (!db.has('Tasks').value()) {
-  db.set('Tasks', [])
-  .write()
-} else {
-  console.log("Table Tasks is already set.");
-}
-
-if (!db.has('Tags').value()) {
-  db.set('Tags', [])
-  .write()
-} else {
-  console.log("Table Tags is already set.");
-}
-
-if (!db.has('UserSettings').value()) {
-  db.set('UserSettings', [])
-  .write()
-} else {
-  console.log("Table UserSettings is already set.");
-}
+db.close();

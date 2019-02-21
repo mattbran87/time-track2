@@ -20,6 +20,10 @@
     "loaders.css": "^0.1.2",
     "lowdb": "^1.0.0",
     "moment": "^2.22.2",
-    "popper.js": "^1.14.5"
+    "popper.js": "^1.14.5",
+    "sqlite3": "^4.0.6"
+  },
+  "devDependencies": {
+    "electron-builder": "^20.38.5"
   }
 }
